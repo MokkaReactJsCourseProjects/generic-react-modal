@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    position: relative;
+    text-align: center;
+    min-height: 150vh;
+}
+
+.test {
+    background-color: red;
+}
