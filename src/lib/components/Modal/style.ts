@@ -15,6 +15,8 @@ export const StyledModal = styled.section<StyledModalProps>`
     ${({ type }) =>
         type === "error"
             ? `box-shadow: 0 0px 12px red`
+            : type === "success"
+            ? `box-shadow: 0 0px 12px lime`
             : `box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)`};
     min-width: 10vw;
     max-width: 75vw;
@@ -27,7 +29,7 @@ export const StyledModal = styled.section<StyledModalProps>`
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 6px 0;
+        padding: 6px 36px;
         border-bottom: 1px lightgray solid;
     }
     main {

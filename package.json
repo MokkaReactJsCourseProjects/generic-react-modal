@@ -1,12 +1,17 @@
 {
     "name": "generic-react-modal",
-    "description": "A basic ReactJS modal",
+    "description": "A very basic React.js modal",
     "author": "M.O.K.K.A.",
-    "version": "0.2.4",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MokkaReactJsCourseProjects/generic-react-modal.git"
+    },
+    "version": "0.2.6",
     "keywords": [
         "react",
         "components",
-        "ui"
+        "ui",
+        "modal"
     ],
     "private": false,
     "main": "dist/index.js",
@@ -17,14 +22,10 @@
     ],
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
-        "@testing-library/jest-dom": "^5.17.0",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
-        "styled-components": "^6.0.5",
-        "web-vitals": "^2.1.4"
+        "styled-components": "^6.0.5"
     },
     "scripts": {
         "start": "react-scripts start",

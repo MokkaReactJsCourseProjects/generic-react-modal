@@ -7,7 +7,7 @@ import ModalBackground from "../ModalBackground";
 type ModalProps = {
     opened: boolean;
     setOpened: React.Dispatch<React.SetStateAction<boolean>>;
-    type?: "default" | "error";
+    type?: "default" | "error" | "success";
     title?: string;
     closeButton?: { alt: string } | boolean;
     backgroundCanClose?: boolean;
@@ -17,7 +17,23 @@ type ModalProps = {
     children?: React.ReactNode;
 };
 
-//Component of the generic modal
+/**
+ * A generic modal component that provides various customization options like background opacity,
+ * header display with a close button, and customizable body padding.
+ *
+ * @param {object} props - The properties for the Modal component.
+ * @param {boolean} props.opened - The opened state of the modal.
+ * @param {function} props.setOpened - A function to set the opened state of the modal.
+ * @param {("default" | "error" | "success")} [props.type="default"] - The semantic type of the modal that can changes its appearance.
+ * @param {string} [props.title] - The title to be displayed on the modal's header.
+ * @param {boolean} [props.closeButton=true] - Determines if a close button should be displayed in the modal's header.
+ * @param {boolean} [props.backgroundCanClose=true] - Determines if clicking the background closes the modal.
+ * @param {number} [props.backgroundOpacity=0.2] - The opacity of the modal background.
+ * @param {number} [props.paddingH=18] - Horizontal padding for the modal's body.
+ * @param {number} [props.paddingV=6] - Vertical padding for the modal's body.
+ * @param {React.ReactNode} props.children - The child components to render within the modal's body.
+ * @returns {React.ReactElement|null} The Modal with its background and content, or null if the modal is not opened.
+ */
 export default function Modal({
     opened,
     setOpened,
@@ -29,15 +45,20 @@ export default function Modal({
     paddingH = 18,
     paddingV = 6,
     children,
-}: ModalProps) {
+}: ModalProps): React.ReactElement | null {
+    //Displays the header the button, the title or both are shown
     const headerShown = closeButton !== false || title !== undefined;
+    //Closes the modal
     function handleClose() {
         setOpened(false);
     }
 
+    //Doesn't render the modal if it's closed
     if (!opened) {
         return null;
     }
+
+    //Does render the modal if it's opened
     return (
         <ModalBackground
             opened={opened}

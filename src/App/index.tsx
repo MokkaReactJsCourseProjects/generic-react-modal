@@ -6,24 +6,25 @@ import { Modal } from "../lib";
 //Component of the app
 export default function App() {
     const [opened, setOpened] = useState(false);
+    function openModal() {
+        setOpened(true);
+    }
 
     return (
         <div className="app">
-            <button
-                onClick={() => {
-                    setOpened(true);
-                }}
-            >
-                Open
-            </button>
+            <button onClick={openModal}>Send form</button>
             <Modal
                 opened={opened}
                 setOpened={setOpened}
-                title="Enregistré !"
+                type="success"
+                title="Form sent"
                 paddingH={40}
-                paddingV={14}
+                paddingV={20}
             >
-                <p>L'employé à bien été créé</p>
+                <p>
+                    We have received your answers. Thank you for participating
+                    in this survey!
+                </p>
             </Modal>
         </div>
     );
