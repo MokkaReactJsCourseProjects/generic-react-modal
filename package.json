@@ -6,7 +6,7 @@
         "type": "git",
         "url": "git+https://github.com/MokkaReactJsCourseProjects/generic-react-modal.git"
     },
-    "version": "0.2.6",
+    "version": "0.2.7",
     "keywords": [
         "react",
         "components",
